@@ -18,6 +18,8 @@ namespace TinyRTS.Player
         {
             SelectedObjects.Clear();
             SelectedObjects.Add(selectable);
+            
+            Debug.Log(SelectedObjects);
         }
     }
 }
