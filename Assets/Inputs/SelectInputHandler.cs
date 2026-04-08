@@ -34,13 +34,13 @@ namespace Inputs
 
         private void HandleSelect(GameObject go)
         {
-            IClickable selectedObject = go.GetComponent<IClickable>();
-            if (selectedObject == null)
+            IClickable clickedObject = go.GetComponent<IClickable>();
+            if (clickedObject == null)
             {
                 return;
             }
 
-            selectedObject.OnClick();
+            clickedObject.OnClick();
         }
     }
 }
