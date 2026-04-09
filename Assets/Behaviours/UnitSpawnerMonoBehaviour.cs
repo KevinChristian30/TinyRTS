@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TinyRTS.Units;
 using Units;
@@ -13,7 +14,7 @@ namespace Behaviours
         {
             GameUnitSpawner spawner = new GameUnitSpawner();
 
-            GameUnit pawn1 = new GameUnit
+            GameUnit pawn1 = new GameUnit(new GameUnitId(Guid.NewGuid().ToString()))
             {
                 Unit = new Pawn(),
                 AnimatorController = pawnAnimatorController,
@@ -21,7 +22,7 @@ namespace Behaviours
                 ColliderSize = new Vector2(0.5f, 0.5f)
             };
 
-            GameUnit pawn2 = new GameUnit
+            GameUnit pawn2 = new GameUnit(new GameUnitId(Guid.NewGuid().ToString()))
             {
                 Unit = new Pawn(),
                 AnimatorController = pawnAnimatorController,

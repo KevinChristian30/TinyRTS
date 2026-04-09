@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Behaviours;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Units
     {
         public void Spawn(GameUnit gameUnit)
         {
-            var gameObject = new GameObject();
+            var gameObject = new GameObject(gameUnit.Id.Value);
 
             SetPosition(gameObject, gameUnit.Position);
             SetAnimation(gameObject, gameUnit.AnimatorController);
