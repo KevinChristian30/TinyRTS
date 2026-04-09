@@ -21,5 +21,10 @@ namespace TinyRTS.Player
             
             Debug.Log(SelectedObjects);
         }
+
+        public ISet<ISelectable> GetSelectedObjects()
+        {
+            return SelectedObjects;
+        }
     }
 }

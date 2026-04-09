@@ -1,10 +1,11 @@
+using Inputs;
 using TinyRTS.Core;
 using TinyRTS.Player;
 using UnityEngine;
 
 namespace Behaviours
 {
-    public class SelectableMonoBehaviour : MonoBehaviour, IClickable
+    public class SelectableMonoBehaviour : MonoBehaviour, ILeftClickable
     {
         private Player _player;
         private ISelectable _selectable;
@@ -20,7 +21,7 @@ namespace Behaviours
             _player = PlayerMonoBehaviour.Instance.Player;
         }
 
-        public void OnClick()
+        public void OnLeftClick()
         {
             _player.Select(_selectable);
         }

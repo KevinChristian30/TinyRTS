@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Behaviours;
 using UnityEngine;
 
@@ -10,12 +9,13 @@ namespace Units
         public void Spawn(GameUnit gameUnit)
         {
             var gameObject = new GameObject(gameUnit.Id.Value);
+            gameUnit.GameObject = gameObject;
 
             SetPosition(gameObject, gameUnit.Position);
             SetAnimation(gameObject, gameUnit.AnimatorController);
             SetCollider(gameObject, gameUnit.ColliderSize);
 
-            gameObject.AddComponent<SelectableMonoBehaviour>().Init(gameUnit.Unit);
+            gameObject.AddComponent<SelectableMonoBehaviour>().Init(gameUnit);
         }
 
         public void Spawn(ICollection<GameUnit> gameUnits)
